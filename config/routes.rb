@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  get 'password_resets/new'
 
+  get 'password_resets/edit'
+
+  get 'sessions/new'
+  resources :account_activations, only: [:edit]
   resources :users
+  resources :password_resets, only: [:new, :create, :edit, :update]
   get 'users/new'
 
   #get 'static_pages/home'
