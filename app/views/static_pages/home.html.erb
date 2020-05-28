@@ -4,6 +4,7 @@
 <button class ="highlighted">Recent Posts</button>
   <button><%= link_to "Selected Posts", root_path %></button>
   <button><%= link_to "My Setting", current_user %></button>
+  <button><%= link_to "New post", post_path %></button>
 <div class="newsfeed">
 
 
@@ -42,13 +43,11 @@
     <a class="buttonbox">AWS</a>
   </div>
   <div class="postbar">
-    <div id="heading">
-      <h5>Post</h5>
+     <h5>Post</h5>
       <% @top_five.each do |micropost| %>
        <%= micropost.content %>
        <br>
       <% end %>
-    </div>
   </div>
   <div class="sidebar">
     <div id="heading">

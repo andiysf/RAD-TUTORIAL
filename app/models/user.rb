@@ -14,6 +14,6 @@ class User < ApplicationRecord
     end
 
     VALID_MOBILE_REGEX = /\A(\+62 ((\d{3}([ -]\d{3,})([- ]\d{4,})?)|(\d+)))|(\(\d+\) \d+)|\d{3}( \d+)+|(\d+[ -]\d+)|\d+\z/
-    validates :mobile_no, presence: true, length: { maximum: 12 }, format: { with: VALID_MOBILE_REGEX }
+    validates :mobile_no, presence: true, length: { maximum: 10 }, format: { with: VALID_MOBILE_REGEX }
 end
 
