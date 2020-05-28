@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'sessions/new'
-  resources :account_activations, only: [:edit]
+
   resources :users
   get 'users/new'
 
