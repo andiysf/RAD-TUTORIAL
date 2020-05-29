@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'sessions/new'
-
+  resources :microposts
   resources :users
   get 'users/new'
 
@@ -19,6 +19,4 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/post', to: 'microposts#new'
-  resources :microposts
-  resources :users
 end

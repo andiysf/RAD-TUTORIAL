@@ -1,5 +1,9 @@
 <li id="micropost-<%= micropost.id %>">
+    <div class = "post">
     <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
-    <span class="content"><%= micropost.content %></span>
-    <span class="user"><%= link_to micropost.user.name, micropost.user %> <%= micropost.created_at %> </span>
+    <p class="title"><b><%= micropost.title %></b></p>
+    <p>
+    <%= link_to micropost.user.name, micropost.user %> &emsp; <%= time_ago_in_words(micropost.created_at) %> ago &emsp; <%= micropost.topic %> &emsp; view: <%= micropost.view %>
+    </p>
+    </div>
 </li>

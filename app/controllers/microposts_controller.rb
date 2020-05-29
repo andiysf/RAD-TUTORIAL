@@ -2,7 +2,7 @@ class MicropostsController < ApplicationController
     
     def new
         if logged_in?
-            @micropost = current_user.micropost.new
+            @micropost = current_user
         else
             redirect_to login_path
         end
@@ -25,9 +25,9 @@ class MicropostsController < ApplicationController
             render 'new'
         end
     end
-
     private
         def micropost_params
-            params.require(:micropost).permit(:title, :content, :topic)
+            params.require(:micropost).permit(:topic, :title, :content)
         end
+    
 end

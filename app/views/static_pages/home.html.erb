@@ -6,14 +6,12 @@
   <button><%= link_to "My Setting", current_user %></button>
   <button><%= link_to "New post", post_path %></button>
 <div class="newsfeed">
-
-
 <% if @microposts.any? %>
   <h3>News feed</h3>
-  <ol class="microposts">
-    <%= render @microposts %>
-  </ol>
-  <%= will_paginate @microposts, inner_window: 1, outer_window: 1 %>
+    <ol class="microposts">
+      <%= render @microposts %>
+    </ol>
+    <%= will_paginate @microposts, inner_window: 1, outer_window: 1 %>
   <% end %>
 </div>
 
@@ -45,7 +43,7 @@
   <div class="postbar">
      <h5>Post</h5>
       <% @top_five.each do |micropost| %>
-       <%= micropost.content %>
+       <%= micropost.title %>
        <br>
       <% end %>
   </div>

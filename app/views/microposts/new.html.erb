@@ -1,12 +1,13 @@
 <% provide(:title, 'Create Post') %>
 <% provide(:button_text, 'Create Post') %>
-<h1>Make New Post</h1>
+<h1>Make Post</h1>
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@micropost) do |f| %>
 
         <%= f.label :topic %>
-        <%= f.select :topic, class: 'form-control' %>
+        <%= f.select :topic, options_for_select(['News', 'V.R', 'RMIT', 'Game', 'Rails', 'GO', 'Joke', 'Reat', 'Vue', 'Node', 'IOS', 'AWS', 'A.I.', 'Other']) %>
 
         <%= f.label :title %>
         <%= f.text_field :title, class: 'form-control' %>
@@ -14,7 +15,7 @@
         <%= f.label :content %>
         <%= f.text_field :content, class: 'form-control' %>
 
-   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
-<% end %>
+        <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+        <% end %>
     </div>
 </div>
