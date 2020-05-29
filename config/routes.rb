@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   get 'sessions/new'
-  resources :microposts
+  resources :account_activations, only: [:edit]
   resources :users
+  resources :password_resets, only: [:new, :create, :edit, :update]
   get 'users/new'
 
   #get 'static_pages/home'
@@ -12,11 +17,10 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about'
   #get 'static_pages/contact'
   get '/contact', to: 'static_pages#contact'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  get '/post', to: 'microposts#new'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

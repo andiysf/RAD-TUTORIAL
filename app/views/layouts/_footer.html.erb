@@ -1,7 +1,13 @@
-
-  <br><br>
-  <footer class="footer">
-    <p>
-      Copyright(c) 2020 | Powered by Muhammad Andi Yusuf - s3827507 | Nicolas Nicolas - s3827493 | Amir Homayoon Ashrafzadeh 
-    </p>
-  </footer>
+<footer class="footer">
+  <small>
+    The <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+    by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
+  </small>
+  <nav>
+    <ul>
+      <li><%= link_to "About",   about_path %></li>
+      <li><%= link_to "Contact", contact_path %></li>
+      <li><a href="http://news.railstutorial.org/">News</a></li>
+    </ul>
+  </nav>
+</footer>

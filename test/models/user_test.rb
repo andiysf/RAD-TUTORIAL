@@ -3,7 +3,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   def setup
-    @user = User.new(name: "Example User", email: "user@example.com"), password: "foobar", password_confirmation: "foobar", mobile_no: "0812371192")
+    @user = User.new(name: "Example User", email: "user@example.com"), password: "foobar", password_confirmation: "foobar")
   end
 
   test "email addresses should be unique" do
@@ -22,8 +22,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test "mobile number should be valid" do
-    @user.mobile_no = @user.mobile_no = "0812371192"
-    assert_not @user.valid?
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?(:remember, '')
   end
 end

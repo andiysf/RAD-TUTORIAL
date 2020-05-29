@@ -1,67 +1,14 @@
+<div class="center jumbotron">
+  <h1>Welcome to the Sample App</h1>
 
-<% provide(:title, 'Home') %>
+  <h2>
+    This is the home page for the
+    <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+    sample application.
+  </h2>
 
-<button class ="highlighted">Recent Posts</button>
-  <button><%= link_to "Selected Posts", root_path %></button>
-  <button><%= link_to "My Setting", current_user %></button>
-  <button><%= link_to "New post", post_path %></button>
-<div class="newsfeed">
-<% if @microposts.any? %>
-  <h3>News feed</h3>
-    <ol class="microposts">
-      <%= render @microposts %>
-    </ol>
-    <%= will_paginate @microposts, inner_window: 1, outer_window: 1 %>
-  <% end %>
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
 
-<div class="sidebar">
-    <div id="heading">
-      Recent members
-    </div>
-    
-  </div> 
-  <div class="sidebar">
-    <div id="heading">
-      Topic
-    </div>
-    <a class="buttonbox">All</a>
-    <a class="buttonbox">VR</a>
-    <a class="buttonbox">RMIT</a>
-    <a class="buttonbox">Game</a>
-    <a class="buttonbox">Rails</a>
-    <a class="buttonbox">Go/a>
-    <a class="buttonbox">Web</a>
-    <a class="buttonbox">M.L</a>
-    <a class="buttonbox">Joke</a>
-    <a class="buttonbox">Rest</a>
-    <a class="buttonbox">Vue</a>
-    <a class="buttonbox">Node</a>
-    <a class="buttonbox">iOS</a>
-    <a class="buttonbox">AWS</a>
-  </div>
-  <div class="postbar">
-     <h5>Post</h5>
-      <% @top_five.each do |micropost| %>
-       <%= micropost.title %>
-       <br>
-      <% end %>
-  </div>
-  <div class="sidebar">
-    <div id="heading">
-      Links
-    </div>
-      <a class="buttonbox">Rails</a>
-      <a class="buttonbox">RMIT</a>
-      <a class="buttonbox">Docs</a>
-  </div>
-
-
-
-  </div>
-  
-  
-
-
-
-
+<%= link_to image_tag("rails.png", alt: "Rails logo"),
+            'http://rubyonrails.org/' %>
